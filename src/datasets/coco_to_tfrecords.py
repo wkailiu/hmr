@@ -261,7 +261,8 @@ def add_to_tfrecord(coco, img_id, img_dir, coder, writer, is_train):
         plt.clf()
         fig = plt.figure(1)
         ax = fig.add_subplot(121)
-        image_with_skel = draw_skeleton(image, joints[:2, :], vis=visible, radius=(np.mean(image.shape[:2]) * 0.01).astype(int))
+        image_with_skel = draw_skeleton(image, joints[:2, :], vis=visible, 
+            radius=(np.mean(image.shape[:2]) * 0.01).astype(int))
         ax.imshow(image_with_skel)
         ax.axis('off')
         # ax.imshow(image)
@@ -269,7 +270,8 @@ def add_to_tfrecord(coco, img_id, img_dir, coder, writer, is_train):
         # ax.scatter(joints[0, ~visible], joints[1, ~visible], color='green')
         ax.scatter(pos[0], pos[1], color='red')
         ax = fig.add_subplot(122)
-        image_with_skel_scaled = draw_skeleton(image_scaled, joints_scaled[:2, :], vis=visible, radius=max(4, (np.mean(image_scaled.shape[:2]) * 0.01).astype(int)))
+        image_with_skel_scaled = draw_skeleton(image_scaled, joints_scaled[:2, :], 
+            vis=visible, radius=max(4, (np.mean(image_scaled.shape[:2]) * 0.01).astype(int)))
         ax.imshow(image_with_skel_scaled)
         ax.scatter(center[0], center[1], color='red')
         # ax.imshow(image_scaled)

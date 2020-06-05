@@ -242,8 +242,8 @@ class DataLoader(object):
             reader = tf.TFRecordReader()
             _, example_serialized = reader.read(filename_queue)
             if has_3d:
-                image, image_size, label, center, fname, pose, shape, gt3d, has_smpl3d = data_utils.parse_example_proto(
-                    example_serialized, has_3d=has_3d)
+                image, image_size, label, center, fname, pose, shape, gt3d, 
+                    has_smpl3d = data_utils.parse_example_proto(example_serialized, has_3d=has_3d)
                 # Need to send pose bc image can get flipped.
                 image, label, pose, gt3d = self.image_preprocessing(
                     image, image_size, label, center, pose=pose, gt3d=gt3d)

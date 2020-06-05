@@ -3,7 +3,8 @@ Evaluation of H3.6M.
 
 Sample call from hmr:
 python -m src.benchmark.evaluate_h36m --batch_size=500 --load_path=<model_to_eval>
-python -m src.benchmark.evaluate_h36m --batch_size=500 --load_path=/home/kanazawa/projects/hmr_v2/models/model.ckpt-667589
+python -m src.benchmark.evaluate_h36m --batch_size=500 
+    --load_path=/home/kanazawa/projects/hmr_v2/models/model.ckpt-667589
 """
 
 from __future__ import absolute_import
